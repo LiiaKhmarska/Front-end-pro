@@ -1,0 +1,62 @@
+
+body {
+    background-color: #dcdcdc;
+    box-sizing: border-box;
+    color: navy;
+    font-family: "Roboto", sans-serif;
+}
+
+h1, h2 {
+
+    text-align: center;
+}
+.container {
+    width: 90%;
+    margin: 10px auto;
+}
+table {
+    margin: 10px auto;
+    width: 32rem;
+    border: 2px solid navy;
+    font-size: 1.3rem;
+    border-collapse: collapse;
+}
+td{
+    border: 1px solid navy;   
+    width: 3rem;
+    text-align: center;
+    vertical-align: middle;
+}
+tr{
+    height: 3rem;
+}
+.caption {
+    background-color: rgb(185, 201, 230);
+}
+
+
+.btn{
+    margin: 10px;
+    text-align: center;
+}
+button{
+    width: 20rem;
+    height: 3rem;
+    color: darkblue;
+    font-weight: 700;
+    border-radius: 10px;
+    &:hover{
+        cursor: pointer;
+    }
+    
+}
+.clicked {
+    background-color: burlywood;
+    color: green;
+}
+
+.random-img{
+    width: 80%;
+    margin: 10px auto;
+    text-align: center;
+}
