@@ -1,0 +1,47 @@
+.h1, .h2, .mb-3, .out {
+    text-align: center;
+}
+
+.btn {
+    margin: 10px;
+    width: 150px;
+}
+
+.todo-list{
+    border: 2px solid blue;
+    box-shadow: 5px 15px 15px rgb(160, 160, 244);
+    background-color: lightcyan;
+    border-radius: 12px;
+    min-height: 15rem;
+    h2{
+        margin-top: 20px;
+        color: navy;
+    }
+}
+
+.input-group{
+    width: 98%;
+    margin: auto;
+    .input-task{
+        font-size: 1rem;
+        margin-left: 20px;
+        line-height: 2rem;
+        padding-left: 15px;
+        margin: auto;
+        width:calc(100% - 165px);
+        border-radius: 8px;
+
+    }
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    width: 99%;
+}
+
+ol{
+    margin: 0 auto;
+}
