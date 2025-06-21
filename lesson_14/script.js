@@ -43,7 +43,6 @@ btnNext.addEventListener("click", function () {
     showImage();
     if (currentIndex === totalSlides - 1) {
       this.style.visibility = "hidden";
-      i;
     }
   }
 });
@@ -52,39 +51,39 @@ function showImage() {
   if (sliderLine.childElementCount) {
     sliderLine.removeChild(sliderLine.childNodes[0]);
   }
-
-  let img = document.createElement("img");
-  img.src = `./images/${images[currentIndex]}`;
-  img.alt = `funny dog ${currentIndex}`;
+  const img = createElement({
+    tag: "img",
+    attributes: { src: `./images/${images[currentIndex]}` },
+  });
   sliderLine.append(img);
 }
+
 showImage();
 
-function createDot() {
-  const dot = document.createElement("div");
-  dot.classList.add("dot");
-  return dot;
-}
-
 function createDotNavigation(dotsQuantity) {
+  const dotFragment = document.createDocumentFragment();
   for (let i = 0; i < dotsQuantity; i++) {
-    const dot = createDot();
+    const dot = createElement({ tag: "div", attributes: { class: "dot" } });
     dot.dataset.key = i;
     if (i === 0) {
       dot.classList.add("active-dot");
     }
-    navDots.appendChild(dot);
-    dot.onclick = function () {
-      document.querySelector(".active-dot").classList.remove("active-dot");
-      this.classList.add("active-dot");
-      currentIndex = i;
-      showImage();
-      checkVisibility(currentIndex);
-    };
+    dotFragment.append(dot);
   }
+  return dotFragment;
 }
 
-createDotNavigation(totalSlides);
+navDots.append(createDotNavigation(totalSlides));
+
+navDots.addEventListener("click", function (event) {
+  if (event.target.className === "dot") {
+    document.querySelector(".active-dot").classList.remove("active-dot");
+    event.target.classList.add("active-dot");
+    currentIndex = +event.target.dataset.key;
+    checkVisibility(currentIndex);
+    showImage();
+  }
+});
 
 function checkVisibility(index) {
   switch (index) {
