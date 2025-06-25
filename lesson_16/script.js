@@ -3,7 +3,7 @@ function Student(name, surname, birthDate, assessments = []) {
   this.surname = surname;
   this.birthDate = birthDate;
   this.assessments = assessments;
-  this.attendance = new Array(25);
+  this.attendance = new Array(5).fill(null);
 }
 
 Student.prototype.getAge = function () {
@@ -20,19 +20,16 @@ Student.prototype.getAverage = function () {
 };
 
 Student.prototype.present = function () {
-  const index = this.attendance.findIndex((elem) => elem === undefined);
-  if (index === -1) return;
+  const index = this.attendance.findIndex((elem) => elem === null);
+  if (index === -1) return this;
   this.attendance[index] = true;
   return this;
 };
 
 Student.prototype.absent = function () {
-  for (let i = 0; i < this.attendance.length; i++) {
-    if (this.attendance[i] === undefined) {
-      this.attendance.splice(i, 1, false);
-      break;
-    }
-  }
+  const index = this.attendance.findIndex((elem) => elem === null);
+  if (index === -1) return this;
+  this.attendance[index] = false;
   return this;
 };
 
