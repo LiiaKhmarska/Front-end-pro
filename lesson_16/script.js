@@ -3,7 +3,7 @@ function Student(name, surname, birthDate, assessments = []) {
   this.surname = surname;
   this.birthDate = birthDate;
   this.assessments = assessments;
-  this.attendance = new Array(5).fill(null);
+  this.attendance = new Array(25).fill(null);
 }
 
 Student.prototype.getAge = function () {
