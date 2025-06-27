@@ -12,6 +12,5 @@ function createElement({ tag = "div", content, attributes } = {}) {
       element.setAttribute(key, value);
     });
   }
-
   return element;
 }

@@ -44,13 +44,15 @@ function addTask(container, content) {
   });
   fragment.prepend(checkBox);
   fragment.append(span);
+  removeBtn.dataset.btn = "delete-task";
   fragment.append(removeBtn);
   li.append(fragment);
   container.append(li);
 }
 
 taskList.addEventListener("click", function (event) {
-  if (event.target.className === "todo-item__delete") {
+  if (event.target.dataset.btn === "delete-task") {
+    console.log(event.target.dataset.data);
     event.target.parentElement.remove();
     tasks = tasks.filter(
       (item) => item !== event.target.previousElementSibling.textContent
