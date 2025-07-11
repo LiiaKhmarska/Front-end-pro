@@ -1,0 +1,23 @@
+.timer-wripper{
+    min-height: 50px;
+}
+
+
+
+.col{
+    border: 1px solid gray;
+    min-height: 50px;
+    border-radius: 15px;
+}
+
+.timer{
+    font-size: 2rem;
+    text-align: center;
+    border: 1px solid maroon;
+    background-color: lightgrey;
+
+}
+
+h1{
+    text-align: center;
+}   

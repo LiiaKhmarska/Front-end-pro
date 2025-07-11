@@ -1,0 +1,46 @@
+.timer-wrapper{
+    border: 1px solid gray;
+    border-radius: 15px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-items: space-evenly;
+}
+
+
+
+.timer{
+    font-size: 2rem;
+    text-align: center;
+
+}
+
+h1{
+    text-align: center;
+}   
+
+.timer-value{
+    font-size: 1.2rem;
+    border: none;
+    margin: 10px;
+    margin-left: 25px;
+    background: transparent;
+    /* border-radius: 5px; */
+}
+
+.btn-success{
+    width: 150px;
+    /* height: 45px; */
+}
+
+.col{
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.ready{
+    background-color: rgba(74, 239, 162, 0.268);
+}
+.inprogress{
+    background-color: rgba(239, 233, 74, 0.268);
+}
