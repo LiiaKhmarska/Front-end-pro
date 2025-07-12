@@ -1,0 +1,58 @@
+h1, h2{
+    text-align: center;
+    margin: 20px auto;
+
+}   
+.h2{
+    font-size: 3em;
+    margin-top: 20px;
+}
+.select-city-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap:5px
+}
+
+.btn{
+    width: fit-content;
+}
+select{
+    max-width: 60%;
+}
+p{
+    margin: 0;
+}
+.show-weather{
+    visibility:hidden;
+    border: 2px solid yellowgreen;
+    border-radius: 15px;
+    width: 50%;
+    margin: 10px auto;
+    text-align: center;
+    
+}
+.data-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    img{
+        width: 180px;
+    }
+}
+.tempratura-container{
+    .temp-value{
+        font-size: 3.5rem;
+        font-weight: 500;
+    }
+}
+
+.img-container{
+    border: 1px solid green;
+    
+}
+
+.btn-success{
+    width: 150px;
+    margin: 20px auto;
+}
