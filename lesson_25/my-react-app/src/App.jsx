@@ -2,8 +2,15 @@ import { Component } from 'react';
 import './App.css'
 import emojis from './Components/emojis.json';
 import { ShowResult } from './Components/ShowResult';
+import { ShowResultButton } from './Components/ShowResultButton';
+import { ClearResultButton } from './Components/ClearResultButton';
 
 class App extends Component{
+  constructor(props) {
+    super(props)
+    this.handleShowResults = this.handleShowResults.bind(this);
+    this.handleClearResults = this.handleClearResults.bind(this);   
+  }
 
   state = {
     counter: [
@@ -90,22 +97,14 @@ class App extends Component{
                         </li>
                     ))}
           </ul>
-          <button className="show-btn"
-            onClick={this.handleShowResults.bind(this)}
-            disabled={!this.state.btnActive}>
-           Показати результат
-          </button>
-          <button className="clear-btn"
-            onClick={this.handleClearResults.bind(this)}
-            disabled={!this.state.btnActive}>
-          Очистити</button>
+          <ShowResultButton onClick={this.handleShowResults} disabled={!this.state.btnActive} />
+          <ClearResultButton onClick={this.handleClearResults} disabled={!this.state.btnActive}/>
         </div>
         {this.state.showResult &&
           <ShowResult winnerEmoji={this.state.winnerEmoji} winnerCount={this.state.winnerCount} />
         }
       </div>
-    
-     
+         
     )
   }
 }
