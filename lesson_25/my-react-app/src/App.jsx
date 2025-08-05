@@ -6,12 +6,7 @@ import { ShowResultButton } from './Components/ShowResultButton';
 import { ClearResultButton } from './Components/ClearResultButton';
 
 class App extends Component{
-  constructor(props) {
-    super(props)
-    this.handleShowResults = this.handleShowResults.bind(this);
-    this.handleClearResults = this.handleClearResults.bind(this);   
-  }
-
+ 
   state = {
     counter: [
       { id: 'i1', count: 0 },
@@ -34,40 +29,43 @@ class App extends Component{
   }
 
   handleClick(id) {
-       this.setState(({ counter }) => ({
-      counter: counter.map(item => {
-        if (item.id === id) {
-          (item.count++)
-          return item
-        } else {
-          return item
+      this.setState(
+        (prevState) => {          
+        const updateCounter = prevState.counter.map((item) => {     
+          if (item.id === id) {
+            return {...item, count: item.count+1}
+          }
+          return item;
+        })
+
+        return {
+          ...prevState,
+          counter: updateCounter,
+          btnActive: true
         }
-      })
-       }))
-      this.setState({ btnActive: true },
-      () => localStorage.setItem('emojiesCounter', JSON.stringify(this.state)))
-  }
+      },
+      () => localStorage.setItem('emojiesCounter', JSON.stringify(this.state))
+  )}
 
 
   handleClearResults() {
-    this.setState(({ counter }) => ({
-      counter: counter.map(item => {
-        item.count = 0;
-        return item
-      })
-    }));
-    this.setState({
-      winnerCount: '',
-      winnerEmoji: 0,
-      showResult: false,
-      btnActive : false
-    },
+    this.setState(
+        (prevState) => {          
+        const updateCounter = prevState.counter.map((item) =>({...item, count:0}))
+        return {
+          ...prevState,
+          counter: updateCounter,
+          winnerCount: '',
+          winnerEmoji: 0,
+          showResult: false,
+          btnActive : false
+        }
+      },
       () => localStorage.setItem('emojiesCounter', JSON.stringify(this.state))
-    )    
-  }
+  )}
 
   handleShowResults() {
-    const resultTable = this.state.counter;
+    const resultTable = this.state.counter;    
     let winnerCount = resultTable[0].count;
     let winnerID = resultTable[0].id;
     resultTable.forEach(item => {
@@ -75,16 +73,18 @@ class App extends Component{
         winnerCount = item.count;
         winnerID = item.id
       }
-   });
+    });
     const winnerEmoji = emojis.find(item => item.id === winnerID).emoji;
     this.setState({
       winnerCount: winnerCount,
       winnerEmoji: winnerEmoji,
       showResult : true
-    });    
+    },
+      () => localStorage.setItem('emojiesCounter', JSON.stringify(this.state))
+    );    
   }
 
-  render() { 
+  render() {   
     return (
       <div className='container'>
         <div className='wrapper'>
@@ -97,8 +97,8 @@ class App extends Component{
                         </li>
                     ))}
           </ul>
-          <ShowResultButton onClick={this.handleShowResults} disabled={!this.state.btnActive} />
-          <ClearResultButton onClick={this.handleClearResults} disabled={!this.state.btnActive}/>
+          <ShowResultButton onClick={this.handleShowResults.bind(this)} disabled={!this.state.btnActive} />
+          <ClearResultButton onClick={this.handleClearResults.bind(this)} disabled={!this.state.btnActive}/>
         </div>
         {this.state.showResult &&
           <ShowResult winnerEmoji={this.state.winnerEmoji} winnerCount={this.state.winnerCount} />

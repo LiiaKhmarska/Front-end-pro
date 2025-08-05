@@ -1,10 +1,6 @@
 import { Component } from "react";
 
 export class ShowResultButton extends Component{
-    constructor(props) {
-        super(props)
-
-}
     render() {
         return(
             <>
