@@ -1,0 +1,15 @@
+#flexSwitchCheckDefault {
+    width:4rem;
+    height: 1.7rem;
+    margin-right: 15px;
+}
+
+.form-check-input:checked {
+    background-color: #93969b;
+    border-color: #93969b;
+}
+
+#light-dark-switch {
+    font-size: 1.4;
+    
+}
