@@ -5,19 +5,19 @@ import { Contacts } from '@components/Contacts';
 import { createBrowserRouter } from 'react-router-dom'
 
 const routerConfig = [
-    {
-        path: "/",
-        Component: HomePage,
-        errorElement: <ErrorPage />,
-        id: 'root',
-        childen: [
+    // {
+        // path: "/",
+        // Component: HomePage,
+        // errorElement: <ErrorPage />,
+        // id: 'root',
+        // childen: [
             { index: true, Component: HomePage },
             { path: '/contacts', element: <Contacts /> },
             {path: '/about', Component: About} ,
             {path: '/*', Component: ErrorPage}
 
-       ]
-    }
+    //    ]
+    // }
 ];
 
 export const router = createBrowserRouter(routerConfig)
