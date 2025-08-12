@@ -1,3 +1,4 @@
+import { Header } from "./Header"
 export function Contacts() {
     return (
         <>

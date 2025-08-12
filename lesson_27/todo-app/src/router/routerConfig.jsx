@@ -1,7 +1,7 @@
-import { ErrorPage } from '../components/ErrorPage';
-import { HomePage } from '../components/HomePage';
-import { About } from '../components/About,';
-import { Contacts } from '../components/Contacts';
+import { ErrorPage } from '@components/ErrorPage';
+import { HomePage } from '@components/HomePage';
+import { About } from '@components/About,';
+import { Contacts } from '@components/Contacts';
 import { createBrowserRouter } from 'react-router-dom'
 
 const routerConfig = [
@@ -12,8 +12,8 @@ const routerConfig = [
         id: 'root',
         childen: [
             { index: true, Component: HomePage },
-            { path: 'contacts', Component: Contacts },
-            {path: 'about', Component: About} ,
+            { path: '/contacts', element: <Contacts /> },
+            {path: '/about', Component: About} ,
             {path: '/*', Component: ErrorPage}
 
        ]

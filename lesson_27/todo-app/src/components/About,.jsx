@@ -1,4 +1,6 @@
+import { Header } from "./Header"
 export function About() {
+    
     return (
         <> <Header />
             <h2>Трохи про нас </h2>

@@ -7,15 +7,11 @@ import { themeContext } from './context/theme.context'
 
 function App() {
   const { theme } = useContext(themeContext);
-  
-  return (
+  return (    
     <div className={`wrapper ${theme}`}>
-   
-      <RouterProvider router={router}  />
+         <RouterProvider router={router}  />
     </div>
       )
 }
 
-export default App
-
-// fallbackElement={ <Loader />}
+export default App;
