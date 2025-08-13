@@ -1,0 +1,61 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+h1{
+  margin-bottom: 40px;
+}
+
+
+
+
+.todo-container{
+    width: 80%;
+      min-height: 70vh;
+        /* background-color: rgba(127, 255, 251, 0.195); */
+          border-radius: 3%;
+            margin: 10px auto;
+              padding: 2%;
+                border: 2px solid lightgrey;
+                  box-shadow: 5px 5px 11px 3px gray;
+                  position: relative;
+}
+
+
+ span {
+    color: red;
+    display: block;
+    position:absolute;
+    top: 90%;
+    padding: 5px 20px;
+    font-size: 0.8rem;
+  }
+.item-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+  min-height: 2.5rem;
+  font-size: 1.5rem;
+  input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+   margin: 0 10px;
+  accent-color: forestgreen;
+  }
+  .bi-trash{
+   font-size: 28px;
+  }
+  .item {
+  width: 100%;
+  text-align: justify;
+  }
+}
+
+.completed{
+  text-decoration: line-through;
+}
+
+
+
