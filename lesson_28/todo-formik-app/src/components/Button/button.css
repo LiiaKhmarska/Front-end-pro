@@ -1,0 +1,17 @@
+.button {
+    padding: 10px 30px;
+    background-color: green;
+    border-radius: 10px;
+    font-size: 1rem;
+    color:blanchedalmond;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+    height: 3rem;
+    margin: 50px auto;
+    box-shadow: 10px 3px 5px gray;
+    &:active{
+        box-shadow: none;
+    }
+
+}

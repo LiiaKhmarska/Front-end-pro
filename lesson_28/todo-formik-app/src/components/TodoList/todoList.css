@@ -1,0 +1,13 @@
+.todo-container {
+    width: 80%;
+    min-height: 70vh;
+    /* background-color: rgba(127, 255, 251, 0.195); */
+    border-radius: 3%;
+    margin: 10px auto;
+    padding: 2%;
+    border: 2px solid lightgrey;
+    box-shadow: 5px 5px 11px 3px gray;
+}
+h1 {
+    text-align: center;
+}

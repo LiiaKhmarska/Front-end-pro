@@ -1,0 +1,29 @@
+.input-container {
+    position: relative;
+    width: 100%;
+    label {
+        display: block;
+        font-size: 1.5rem;
+        color: rgb(0, 43, 128);
+        padding:  0 0 6px 15px;
+    }
+    input {
+        padding: 5px;
+        height: 2rem;
+        border-radius: 12px;
+        color: #000;
+        width: 95%;
+        font-size: 1.3rem;
+        
+    }
+    span {
+        color: red;
+        display: block;
+        position: absolute;
+        top: 100%;
+        padding-left: 20px;
+        font-size: 0.8rem;
+    }
+}
+
+ 

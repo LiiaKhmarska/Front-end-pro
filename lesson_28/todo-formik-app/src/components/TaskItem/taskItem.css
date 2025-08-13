@@ -1,0 +1,43 @@
+.wrapper{
+        width: 90%;
+        margin: 10px auto;
+           
+}
+h3{
+font-size: 1.2rem;
+padding: 0 0 0 4%;
+margin: 0;
+}
+.task-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px auto;
+    margin-bottom: 15px;;
+    width: 95%;
+    font-size: 1.2rem;
+    justify-items: center;
+        min-height: 2.5rem;
+        font-size: 1.5rem;
+
+}
+
+
+.completed {
+    text-decoration: line-through;
+}
+
+  input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin: 0 10px;
+      accent-color: forestgreen;
+  }
+
+  .delete-button{
+    background-color: transparent;
+    font-size: 1.5rem;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+
+  }
