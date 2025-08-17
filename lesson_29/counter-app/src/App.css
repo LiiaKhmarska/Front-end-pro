@@ -1,0 +1,43 @@
+#root {
+  max-width: 1280px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1.1;
+}
+
+.container {
+  width: 90%;
+}
+
+
+.row {
+  height: 250px;
+}
+.col {
+  min-height: 100%;
+  border: 3px solid gray;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: rgba(157, 226, 241, 0.226);
+}
+
+.btn-group{
+  margin-top: 20px;
+  width: 90%;
+  button {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+}
+.container-counter{
+  font-size: 2.5rem;
+  width: 40%;
+  
+
+}
