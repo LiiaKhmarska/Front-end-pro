@@ -1,0 +1,55 @@
+body{
+    background-color: rgba(0, 255, 255, 0.419);
+}
+
+h1, h2{
+    text-align: left;
+}
+
+hr{
+    background-color: gray;   
+    height: 1px;
+}
+.container {
+    width: 90%;
+    margin: 19px auto;
+}
+
+.todo-form{
+   
+    border: 1px solid grey;
+    padding: 15px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    input {
+        min-width: 80%;
+        font-size: 2rem;
+        padding-left: 10px;
+    }
+
+    button {
+        width: 18%;
+        font-size: 2rem;
+    }
+
+}
+
+.todo-container{
+    width: 100%;
+    background-color: antiquewhite;
+    max-width: 95%;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    border-radius: 8px;
+    margin: 10px;
+    border: 1px solid black;
+    text-align: left;
+    padding: 10px;
+    padding-left: 20px;
+}
+
+.todo-counter{
+    text-align: left;
+    padding: 15px;
+    font-size: 2rem;
+}
