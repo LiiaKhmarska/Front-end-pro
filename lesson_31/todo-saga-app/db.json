@@ -1,0 +1,12 @@
+{
+  "todos": [
+    {
+      "id": 250816,
+      "content": "Make todo-list with some features"
+    },
+    {
+      "id": 250822,
+      "content": "Make todo-list with some sagas"
+    }
+  ]
+}
