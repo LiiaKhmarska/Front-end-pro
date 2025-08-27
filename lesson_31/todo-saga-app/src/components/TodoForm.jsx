@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useRef } from 'react';
-import { FETCH_TODOS_ADD } from '../ducks/todos/todos.actions';
+import { ADD_TODOS } from '../ducks/todos/todos.actions';
 
 
 export function TodoForm() {
@@ -10,7 +10,7 @@ export function TodoForm() {
 
     const onSubmit = (event) => {
         event.preventDefault();        
-        dispatch(FETCH_TODOS_ADD({
+        dispatch(ADD_TODOS({
             content: refValue.current.value
         }))
         refValue.current.value =''

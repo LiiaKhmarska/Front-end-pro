@@ -10,12 +10,11 @@ import { FETCH_TODOS } from '../ducks/todos/todos.actions';
 export function TodoList() {
     const dispatch = useDispatch();
     const todos = useSelector(selectTodos);
-    console.log(todos);
     
     
     useEffect(() => {
         dispatch(FETCH_TODOS())     
-    },[dispatch])
+    },[])
 
        return (
         <div className="container">

@@ -3,7 +3,9 @@ import {
   FETCH_TODOS_LOADING,
   FETCH_TODOS_SUCCESS,
   FETCH_TODOS_ERROR,
-  FETCH_TODOS_ADD,
+  ADD_TODOS_LOADING,
+  ADD_TODOS_SUCCESS,
+  ADD_TODOS_ERROR,
 } from "./todos.actions";
 
 const initialState = {
@@ -40,16 +42,25 @@ const todoSlice = createSlice({
         state.todos = [];
         state.error = action.payload;
       })
-      .addCase(FETCH_TODOS_ADD, (state, action) => {
+      .addCase(ADD_TODOS_LOADING, (state) => {
+        state.status = "loading";
+      })
+      .addCase(ADD_TODOS_SUCCESS, (state, action) => {
         state.status = "success";
         state.error = null;
-        // const newTodo = {
-        //   id: Date.now(),
-        //   content: action.payload.content,
-        // };
-        // console.log("newTodo", newTodo);
+        console.log("SLICE: ", action.payload);
 
-        // state.todos.push(newTodo);
+        const newTodo = {
+          id: Date.now(),
+          content: action.payload.content,
+        };
+
+        state.todos.push(newTodo);
+      })
+      .addCase(ADD_TODOS_ERROR, (state, action) => {
+        state.status = "error";
+        state.todos = [];
+        state.error = action.payload;
       });
   },
   selectors: {

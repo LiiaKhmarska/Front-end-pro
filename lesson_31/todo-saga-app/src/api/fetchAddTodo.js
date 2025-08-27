@@ -14,6 +14,4 @@ export const fetchAddTodo = async ({ content: todo }) => {
   if (!response.ok) {
     throw new Error("Something is wrong with adding new todo...");
   }
-
-  console.log("ADD", newTodo);
 };

@@ -6,7 +6,10 @@ import {
   FETCH_TODOS_SUCCESS,
   FETCH_TODOS_ERROR,
   FETCH_TODOS,
-  FETCH_TODOS_ADD,
+  ADD_TODOS,
+  ADD_TODOS_LOADING,
+  ADD_TODOS_SUCCESS,
+  ADD_TODOS_ERROR,
 } from "./todos.actions";
 
 export function* fetchTodosSaga({ payload }) {
@@ -20,17 +23,17 @@ export function* fetchTodosSaga({ payload }) {
 }
 
 export function* addTodoSaga({ payload }) {
-  yield put(FETCH_TODOS_LOADING());
+  yield put(ADD_TODOS_LOADING());
 
   try {
     yield call(fetchAddTodo, payload);
-    yield put(FETCH_TODOS_ADD());
+    yield put(ADD_TODOS_SUCCESS(payload));
   } catch (error) {
-    yield put(FETCH_TODOS_ERROR(JSON.stringify(error)));
+    yield put(ADD_TODOS_ERROR(JSON.stringify(error)));
   }
 }
 
 export function* watchFetchTodosSagas() {
   yield takeEvery(FETCH_TODOS.type, fetchTodosSaga);
-  yield takeEvery(FETCH_TODOS_ADD, addTodoSaga);
+  yield takeEvery(ADD_TODOS.type, addTodoSaga);
 }
