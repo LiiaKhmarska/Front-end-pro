@@ -4,6 +4,5 @@ export const fetchAllTodos = async () => {
     throw new Error("Something is wrong with loading todos...");
   }
   const data = await response.json();
-
   return data;
 };

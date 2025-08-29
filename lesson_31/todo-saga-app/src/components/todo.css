@@ -35,21 +35,48 @@ hr{
 }
 
 .todo-container{
-    width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
     background-color: antiquewhite;
     max-width: 95%;
     font-size: 1.5rem;
-    line-height: 2rem;
+    line-height: 2.5rem;
     border-radius: 8px;
     margin: 10px;
     border: 1px solid black;
     text-align: left;
     padding: 10px;
     padding-left: 20px;
+    position: relative;
 }
 
 .todo-counter{
     text-align: left;
     padding: 15px;
     font-size: 2rem;
+}
+
+.delete-btn {
+    font-size: 20px;
+    position: absolute;
+    right: 1%;
+    
+    border-radius: 50%;
+    padding: 7px;
+    margin-right: 5px;
+    box-shadow: 3px 3px 5px gray;
+    &:hover{
+        cursor: pointer;
+    }
+    &:active{
+        box-shadow:none;
+    }
+
+}
+input[type='checkbox'] {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    accent-color: #911ae1;
 }

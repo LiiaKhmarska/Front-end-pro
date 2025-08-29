@@ -1,6 +1,6 @@
 export const fetchAddTodo = async ({ content: todo }) => {
   const newTodo = {
-    id: Date.now(),
+    id: Date.now().toString(),
     content: todo,
   };
 

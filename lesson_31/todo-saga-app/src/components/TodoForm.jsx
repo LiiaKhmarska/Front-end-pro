@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useRef } from 'react';
-import { ADD_TODOS } from '../ducks/todos/todos.actions';
+import { ADD_TODOS,FETCH_TODOS } from '../ducks/todos/todos.actions';
 
 
 export function TodoForm() {
@@ -13,7 +13,8 @@ export function TodoForm() {
         dispatch(ADD_TODOS({
             content: refValue.current.value
         }))
-        refValue.current.value =''
+        refValue.current.value = ''
+        // dispatch(FETCH_TODOS())
     }
     return (
         

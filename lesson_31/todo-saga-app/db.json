@@ -1,16 +1,23 @@
 {
   "todos": [
     {
-      "id": 250816,
-      "content": "Make todo-list with some features"
+      "id": "1756467751228",
+      "content": "Create request for get all data",
+      "completed": true
     },
     {
-      "id": 250822,
-      "content": "Make todo-list with some sagas"
+      "id": "1756467795632",
+      "content": "Create POST request for add task",
+      "completed": true
     },
     {
-      "id": 1756276522287,
-      "content": "task Wednesday"
+      "id": "1756467808406",
+      "content": "Create DELETE request for remove task",
+      "completed": true
+    },
+    {
+      "id": "1756471889939",
+      "content": "Update lesson on git"
     }
   ]
 }

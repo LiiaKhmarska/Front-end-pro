@@ -3,7 +3,7 @@ import { TodoForm } from './TodoForm';
 import { TodoItem } from './TodoItem';
 import { TodoCounter } from './TodoCounter';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectTodos, selectStatus } from '../ducks/todos/todos.slice';
+import { selectTodos, selectStatus } from '../ducks/todos/todos.slice.js';
 import { useEffect } from 'react';
 import { FETCH_TODOS } from '../ducks/todos/todos.actions';
 
@@ -13,7 +13,11 @@ export function TodoList() {
     
     
     useEffect(() => {
-        dispatch(FETCH_TODOS())     
+        const controller = new AbortController();
+        dispatch(FETCH_TODOS());
+        return () => {
+            controller.abort();
+        }
     },[])
 
        return (

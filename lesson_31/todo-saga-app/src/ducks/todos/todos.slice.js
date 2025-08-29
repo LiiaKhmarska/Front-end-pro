@@ -6,6 +6,12 @@ import {
   ADD_TODOS_LOADING,
   ADD_TODOS_SUCCESS,
   ADD_TODOS_ERROR,
+  DELETE_TODOS_LOADING,
+  DELETE_TODOS_SUCCESS,
+  DELETE_TODOS_ERROR,
+  PUT_TODOS_LOADING,
+  PUT_TODOS_SUCCESS,
+  PUT_TODOS_ERROR,
 } from "./todos.actions";
 
 const initialState = {
@@ -18,15 +24,7 @@ const todoSlice = createSlice({
   name: "todos",
   initialState,
   reducerPath: "todosSaga",
-  reducers: {
-    addTodo: (state, action) => {
-      const newTodo = {
-        id: Date.now(),
-        content: action.payload.content,
-      };
-      state.todos.push(newTodo);
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(FETCH_TODOS_LOADING, (state) => {
@@ -48,16 +46,32 @@ const todoSlice = createSlice({
       .addCase(ADD_TODOS_SUCCESS, (state, action) => {
         state.status = "success";
         state.error = null;
-        console.log("SLICE: ", action.payload);
-
-        const newTodo = {
-          id: Date.now(),
-          content: action.payload.content,
-        };
-
-        state.todos.push(newTodo);
       })
       .addCase(ADD_TODOS_ERROR, (state, action) => {
+        state.status = "error";
+        state.todos = [];
+        state.error = action.payload;
+      })
+      .addCase(DELETE_TODOS_LOADING, (state) => {
+        state.status = "loading";
+      })
+      .addCase(DELETE_TODOS_SUCCESS, (state, action) => {
+        state.status = "success";
+        state.error = null;
+      })
+      .addCase(DELETE_TODOS_ERROR, (state, action) => {
+        state.status = "error";
+        state.todos = [];
+        state.error = action.payload;
+      })
+      .addCase(PUT_TODOS_LOADING, (state) => {
+        state.status = "loading";
+      })
+      .addCase(PUT_TODOS_SUCCESS, (state, action) => {
+        state.status = "success";
+        state.error = null;
+      })
+      .addCase(PUT_TODOS_ERROR, (state, action) => {
         state.status = "error";
         state.todos = [];
         state.error = action.payload;
