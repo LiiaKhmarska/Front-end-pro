@@ -1,64 +1,61 @@
-import { render, screen, cleanup, fireEvent } from "@testing-library/react";
-import { userEvent } from "@testing-library/user-event";
+import { render, screen, cleanup, getByText } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, jest } from "@jest/globals";
 import { TodoForm } from "../TodoForm";
-import { store } from "../../store/store";
-import { Provider } from "react-redux";
 
-// const mockDispatch = jest.fn();
+import * as reduxHooks from "react-redux";
+import * as actions from "../../store/todoSlice";
 
 afterEach(cleanup);
-const mockedClicklHandler = jest.fn();
-// const user = userEvent.setup();
+const user = userEvent.setup();
+
+jest.mock("react-redux");
+const mockedDispatch = jest.spyOn(reduxHooks, "useDispatch");
 
 describe("Add button test", () => {
   it("render Add button text correctly", () => {
-    render(
-      <Provider store={store}>
-        <TodoForm />
-      </Provider>
-    );
-    // jest.mock("react-redux", () => {
-    //   useDispatch: () => mockDispatch();
-    // });
+    mockedDispatch.mockResolvedValue(jest.fn());
+    render(<TodoForm />);
     const btnAdd = screen.getByTestId("btn-add");
     expect(btnAdd).toBeInTheDocument();
     expect(btnAdd).toHaveTextContent("Add Task");
   });
 
   it("call onClick Add button", async () => {
-    render(
-      <Provider store={store}>
-        <TodoForm />
-      </Provider>
-    );
-    const btnAdd = screen.getByTestId("btn-add");
-    // fireEvent.click(btnAdd);
-    await userEvent.click(btnAdd);
-    expect(mockedClicklHandler).toHaveBeenCalled();
-    // expect(mockedClicklHandler).toHaveBeenCalledTimes(1);
+    const dispatch = jest.fn();
+    mockedDispatch.mockReturnValue(dispatch);
+    const mockedAddTodo = jest.spyOn(actions, "addTodo");
+
+    render(<TodoForm />);
+    // const btnAdd = screen.getByTestId("btn-add");
+    const btnAdd = screen.getByText("Add Task");
+    await user.click(btnAdd);
+    expect(dispatch).toHaveBeenCalledTimes(1);
+    expect(mockedAddTodo).toHaveBeenCalled();
   });
 
-  it("Should component 'input' be presrnt", async () => {
-    render(
-      <Provider store={store}>
-        <TodoForm />
-      </Provider>
-    );
+  it("Should component 'input' be present", async () => {
+    mockedDispatch.mockResolvedValue(jest.fn());
+    render(<TodoForm />);
     const input = screen.getByRole("textbox");
     expect(input).toBeInTheDocument();
+    expect(input.value).toBe("");
+  });
+
+  it("Should component 'input' have placeholder", async () => {
+    mockedDispatch.mockResolvedValue(jest.fn());
+    render(<TodoForm />);
+    const placeHolder = screen.getByPlaceholderText("Add task");
+    expect(placeHolder).toBeInTheDocument();
   });
 
   it("Should  typing in input correctly", async () => {
-    render(
-      <Provider store={store}>
-        <TodoForm />
-      </Provider>
-    );
+    mockedDispatch.mockResolvedValue(jest.fn());
+
+    render(<TodoForm />);
     const input = screen.getByRole("textbox");
-    await userEvent.type(input, "testing react app");
-    expect(
-      screen.queryAllByDisplayValue("testing react app")
-    ).toBeInTheDocument();
+    await user.type(input, "testing react app");
+    expect(screen.queryByDisplayValue("testing react app")).toBeInTheDocument();
+    expect(input.value).toBe("testing react app");
   });
 });

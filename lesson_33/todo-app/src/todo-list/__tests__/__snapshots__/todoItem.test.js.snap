@@ -9,9 +9,10 @@ exports[`Test todo item should create todo item 1`] = `
         class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1d0g9p8-MuiListItem-root"
       >
         <span
-          class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-vuhw6e-MuiButtonBase-root-MuiSwitchBase-root-MuiCheckbox-root"
+          class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium Mui-checked MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-vuhw6e-MuiButtonBase-root-MuiSwitchBase-root-MuiCheckbox-root"
         >
           <input
+            checked=""
             class="PrivateSwitchBase-input css-12xagqm-MuiSwitchBase-root"
             data-indeterminate="false"
             type="checkbox"
@@ -19,12 +20,12 @@ exports[`Test todo item should create todo item 1`] = `
           <svg
             aria-hidden="true"
             class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
-            data-testid="CheckBoxOutlineBlankIcon"
+            data-testid="CheckBoxIcon"
             focusable="false"
             viewBox="0 0 24 24"
           >
             <path
-              d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+              d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
             />
           </svg>
         </span>
@@ -32,7 +33,7 @@ exports[`Test todo item should create todo item 1`] = `
           class="MuiListItemText-root css-cfq8qh-MuiListItemText-root"
         >
           <p
-            class="MuiTypography-root MuiTypography-body1 css-agyt4m-MuiTypography-root"
+            class="MuiTypography-root MuiTypography-body1 css-rmuk17-MuiTypography-root"
           >
             Make todo-lisCheck todo item
           </p>
@@ -57,7 +58,6 @@ exports[`Test todo item should create todo item 1`] = `
           </svg>
         </button>
       </li>
-      ;
     </div>
   </body>,
   "container": <div>
@@ -65,9 +65,10 @@ exports[`Test todo item should create todo item 1`] = `
       class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1d0g9p8-MuiListItem-root"
     >
       <span
-        class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-vuhw6e-MuiButtonBase-root-MuiSwitchBase-root-MuiCheckbox-root"
+        class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium Mui-checked MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-vuhw6e-MuiButtonBase-root-MuiSwitchBase-root-MuiCheckbox-root"
       >
         <input
+          checked=""
           class="PrivateSwitchBase-input css-12xagqm-MuiSwitchBase-root"
           data-indeterminate="false"
           type="checkbox"
@@ -75,12 +76,12 @@ exports[`Test todo item should create todo item 1`] = `
         <svg
           aria-hidden="true"
           class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
-          data-testid="CheckBoxOutlineBlankIcon"
+          data-testid="CheckBoxIcon"
           focusable="false"
           viewBox="0 0 24 24"
         >
           <path
-            d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+            d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
           />
         </svg>
       </span>
@@ -88,7 +89,7 @@ exports[`Test todo item should create todo item 1`] = `
         class="MuiListItemText-root css-cfq8qh-MuiListItemText-root"
       >
         <p
-          class="MuiTypography-root MuiTypography-body1 css-agyt4m-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-body1 css-rmuk17-MuiTypography-root"
         >
           Make todo-lisCheck todo item
         </p>
@@ -113,7 +114,6 @@ exports[`Test todo item should create todo item 1`] = `
         </svg>
       </button>
     </li>
-    ;
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/6</span>
+                <span class='fraction'>6/6</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">50% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -109,30 +109,30 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -150,28 +150,28 @@ import {removeTodo,toggleTodo} from '../store/todoSlice'
 export function TodoItem({ todo }) {
     const dispatch = useDispatch();
 &nbsp;
-    function <span class="fstat-no" title="function not covered" >handleRemoveTodo(</span>id) {
-<span class="cstat-no" title="statement not covered" >        dispatch(removeTodo(id));</span>
+    function handleRemoveTodo(id) {
+        dispatch(removeTodo(id));
     }
 &nbsp;
-    function <span class="fstat-no" title="function not covered" >handleToggleTodo(</span>id) {
-<span class="cstat-no" title="statement not covered" >        dispatch(toggleTodo(id))        </span>
+    function handleToggleTodo(id) {
+        dispatch(toggleTodo(id))        
     }
 &nbsp;
     return (
         &lt;&gt;
             &lt;ListItem sx={{ bgcolor: '#e3f2fd', borderRadius: 3, my: 1, px: 4, py: 2 }}&gt;
-                &lt;Checkbox checked={todo.checked} onClick={<span class="fstat-no" title="function not covered" >()</span>=&gt;<span class="cstat-no" title="statement not covered" >handleToggleTodo(todo.id)}</span>/&gt;
+                &lt;Checkbox checked={todo.checked} onClick={()=&gt;handleToggleTodo(todo.id)}/&gt;
                 &lt;ListItemText &gt;
                     &lt;Typography sx={{
                         color: 'indigo', fontSize: 20,
-                        textDecoration: todo.checked ? 'line-through' : 'none',
+                        textDecoration: todo.checked ? 'line-through' : <span class="branch-1 cbranch-no" title="branch not covered" >'none',</span>
                     }}&gt;
                         {todo.content}
                     &lt;/Typography&gt;
                 &lt;/ListItemText&gt;
                 &lt;Tooltip title="Delete"&gt;
-                    &lt;IconButton edge='end' onClick={<span class="fstat-no" title="function not covered" >()</span>=&gt;{<span class="cstat-no" title="statement not covered" >handleRemoveTodo(todo.id)}</span>}&gt;
+                    &lt;IconButton edge='end' onClick={()=&gt;{handleRemoveTodo(todo.id)}}&gt;
                         &lt;DeleteIcon /&gt;
                     &lt;/IconButton&gt;
                 &lt;/Tooltip&gt;
@@ -187,7 +187,7 @@ export function TodoItem({ todo }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-01T09:27:12.050Z
+                at 2025-09-03T14:21:17.428Z
             </div>
         <script src="../prettify.js"></script>
         <script>
