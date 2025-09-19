@@ -24,10 +24,11 @@ export function CardCategory({ cardContent,categoryTitle }) {
                         
                         </CardContent>
             <CardActions >
-                {/*  */}
-                    <NavLink to={`/${categoryTitle}`}>
-                        <Button variant="contained" fullWidth sx={{ m: 1 }} disabled={!login}> Переглянути</Button>
-                    </NavLink>
+                {login &&                    <NavLink to={`/${categoryTitle}`}>
+                        <Button variant="contained" fullWidth sx={{ m: 1 }}> Переглянути</Button>
+                </NavLink>
+                }
+
                         </CardActions>
                     </Card>
         

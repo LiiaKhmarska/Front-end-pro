@@ -8,7 +8,7 @@ export function HomePage() {
         <Box  >
             <Header/>
             <Container maxWidth='100%' sx={{backgroundImage:'linear-gradient(to bottom, rgba(7, 126, 246, 0.93), rgba(253, 253, 255, 0.88))'}}>
-                <Typography variant='h2' align='center' gutterBottom sx={{ py: 5, color: 'white', textShadow: '2px 2px navy' }}>Пухнасті чотирилапки</Typography>
+                <Typography variant='h2' align='center' gutterBottom sx={{ py: 5, color: 'navy' }}>Пухнасті чотирилапки</Typography>
             </Container>
             <Container maxWidth='lg'>
                   <Typography variant='h6' align='center' color='textSecondary'  sx={{textAlign:'justify', }}>

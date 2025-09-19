@@ -36,7 +36,7 @@ export function GoodsList() {
     }, [category, dispatch, update])
 
     const status = useSelector(requestStatus); 
-
+    
     return (
         <>
             <Header />
@@ -55,9 +55,11 @@ export function GoodsList() {
             <Typography variant="h3" sx={{textAlign:'center', mb:4}}>
                 Перелік товарів категорії "{categoryTitleUA[category]}"
             </Typography>
-            {status==='loading'&&<h2>Loading...</h2>}
+            {status === 'loading' && <h2 style={{ textAlign:'center'}}>Очікуємо дані трихи затримуються...</h2>}
+            {status==='rejected'&&<h2 style={{color:'plum', textAlign:'center'}}>Вибачте,що пішло не так, дані деcь заблукали...</h2>}
             <CategoryPage setUpdate={ setUpdate} />
         
         </>
     )
 }
+
