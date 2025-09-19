@@ -1,10 +1,18 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./userSlice";
-import { dataGoods } from "./goodsSlice";
+import goodsReducer from "./goodsSlice";
+import { loadState, saveState } from "../utilits/localStorage";
+
+const persistedState = loadState();
 
 export const store = configureStore({
   reducer: {
     user: userReducer,
-    goods: dataGoods,
+    goods: goodsReducer,
   },
+  preloadedState: persistedState,
+});
+
+store.subscribe(() => {
+  saveState(store.getState());
 });

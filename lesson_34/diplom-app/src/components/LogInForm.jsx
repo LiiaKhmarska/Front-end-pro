@@ -1,11 +1,11 @@
 import { Box, Button, TextField } from '@mui/material';
-import { loginSchema } from './helper';
+import { loginSchema } from '../helpers/helperFormValidate';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../store/userSlice';
 
 
-export function LogInForm({ setShowLoginPage}) {
+export function LogInForm({ handleClose}) {
     const dispatch = useDispatch();
 
         const {
@@ -22,9 +22,8 @@ export function LogInForm({ setShowLoginPage}) {
         },
         
          onSubmit: (values, action) => {
-             setShowLoginPage(false);
+             handleClose();
              dispatch(loginUser(values.login));
-             localStorage.setItem('user', values.login)
              action.resetForm();
         },
         validationSchema: loginSchema
@@ -34,10 +33,10 @@ export function LogInForm({ setShowLoginPage}) {
 
     return (
         <Box component='form' onSubmit={handleSubmit} noValidate sx={{mt:1}}>
-            <TextField placeholder="Введить логін" fullWidth required autoFocus sx={{ my: 3 }} value={values.login} name='login' onChange={handleChange} onBlur={handleBlur} />
+            <TextField placeholder="Введить логін" label='Логін' fullWidth required autoFocus sx={{ my: 3 }} value={values.login} name='login' onChange={handleChange} onBlur={handleBlur} />
              {errors.login && touched.login && (<span style={{ color: "red" }}> {errors.login}</span>)}
 
-            <TextField placeholder="Введить пароль" fullWidth required type='password' sx={{ mb: 1 }} name='password' onChange={handleChange} onBlur={handleBlur}/>
+            <TextField placeholder="Введить пароль" label='Пароль' fullWidth required type='password' sx={{ mb: 1 }} name='password' onChange={handleChange} onBlur={handleBlur}/>
             {errors.password && touched.password && (<span style={{ color: "red" }}> {errors.password}</span>)}
             <Button type='submit' variant='contained' fullWidth sx={{ mt: 5, height: '3.5rem' }} disabled={errors.login} >Увійти</Button>
         </Box>

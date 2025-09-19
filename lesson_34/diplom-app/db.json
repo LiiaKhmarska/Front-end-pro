@@ -1,38 +1,96 @@
-{"dogs":[
+{
+  "dogs": [
     {
-        "id":"dog1111",
-        "title":"Нашійник для великих порід",
-        "type":"нашійник",
-        "price":"12",
-        "quantity":"2",
-        "description":"это библиотека, позволяющая получить полный фейковый REST API без предварительной настройки менее чем за 30 секунд"
+      "id": "dog1111",
+      "type": "нашійник",
+      "title": "Нашійник для великих порід",
+      "price": "12x",
+      "quantity": "2x",
+      "description": "Si incontreranno per tre volte, ma ogni volta sarà l’unica, e la prima, e l’ultima."
     },
     {
-        "id":"dog22222",
-        "title":"Повідець 5 м",
-        "type":"повідець",
-        "price":"52",
-        "quantity":"21",
-        "description":"это библиотека, позволяющая получить полный фейковый REST API без предварительной настройки менее чем за 30 секунд"
-    }
-],
-"cats":[
-    {
-        "id":"cat111",
-        "title":"my title",
-        "type":"type of goods",
-        "price":"22",
-        "quantity":"9",
-        "description":"Цель такого сопоставления может состоять либо в поиске подстроки в строке, например, для замены подстроки, либо в определении соответствия строки шаблону для валидации строки."
+      "id": "dog22222",
+      "type": "повідець",
+      "title": "Повідець 5 м",
+      "price": "52",
+      "quantity": "21",
+      "description": "E' terribilmente difficile restare aggrappati alla propria dignità quando il sole sorto è troppo luminoso per i suoi occhi deboli, ed era questo a cui pensavo mentre andavamo a caccia di cattivi per le rovine di una città inesistente"
     },
     {
-        "id":"22222cat222",
-        "title":"my title",
-        "type":"type of goods",
-        "price":"62",
-        "quantity":"5",
-        "description":"Регулярное выражение (далее также - регулярка) - это последовательность специальных символов, формирующих паттерн или шаблон (pattern), который сопоставляется со строкой."
+      "id": "1757600869677",
+      "type": "Quotes",
+      "title": "Tre volte all'alba",
+      "price": "1",
+      "quantity": "222",
+      "description": "Non è neanche detto che se ami davvero qualcuno, ma tanto, la cosa migliore che puoi farci insieme sia vivere"
+    },
+    {
+      "id": "1757613601129",
+      "type": "detergent",
+      "title": "pritty soap",
+      "price": "123",
+      "quantity": "1",
+      "description": "soap for paws "
+    },
+    {
+      "id": "1757613692553",
+      "type": "амуніція",
+      "title": "повідець довгий",
+      "price": "1",
+      "quantity": "2",
+      "description": "червоний повідець посилинний, довжина 10 м"
     }
-],
-"others":[]
+  ],
+  "cats": [
+    {
+      "id": "22222cat222",
+      "type": "Quotes",
+      "title": "Tre volte all'alba",
+      "price": "62",
+      "quantity": "5",
+      "description": "Guardava quella casa, davanti a sé, e pensava alla misteriosa permanenza delle cose nella corrente mai ferma della vita tttttttttt"
+    },
+    {
+      "id": "1757614704845",
+      "type": "Іграшки",
+      "title": "Мяч маленький",
+      "price": "12",
+      "quantity": "22",
+      "description": "Пластиковий м'яч для котів"
+    },
+    {
+      "id": "1758288080937",
+      "type": "Radio Group",
+      "title": "Radio Group",
+      "price": "4",
+      "quantity": "4",
+      "description": "Use radio buttons when the user needs to see all available options. If available options can be collapsed, consider using a Select component because it uses less space."
+    }
+  ],
+  "others": [
+    {
+      "id": "1757614540600",
+      "type": "Обладнання",
+      "title": "Клітка",
+      "price": "100",
+      "quantity": "1",
+      "description": "Клітка для хом'ка\n Emotion packages"
+    },
+    {
+      "id": "1757614835872",
+      "type": "Амуніція",
+      "title": "тапки",
+      "price": "12",
+      "quantity": "1",
+      "description": "Кумедні тапки для морских свинок"
+    },
+    {
+      "id": "1758032702721",
+      "type": "Frasi",
+      "title": "Alessandro Baricco",
+      "price": "1",
+      "quantity": "2",
+      "description": "Sapeva ascoltare, e sapeva leggere. Non i libri, quelli sono buoni tutti, sapeva leggere la gente"
+    }
+  ]
 }

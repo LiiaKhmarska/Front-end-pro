@@ -1,23 +1,13 @@
 import { Typography, Card, CardMedia, CardContent, CardActions, CardHeader, Button } from '@mui/material';
-// import { selectUser } from '../store/userSlice';
-// import { useSelector } from 'react-redux';
+import { selectUser } from '../store/userSlice';
+import { useSelector } from 'react-redux';
 import { NavLink } from "react-router-dom";
-import {useState, useEffect} from 'react'
 
 
 export function CardCategory({ cardContent,categoryTitle }) {
 
-    // const user = useSelector(selectUser);
-    // console.log(user);
-    const [user, setUser] = useState('');
-     useEffect(() => {
-            const lsUser = localStorage.getItem('user');
-            if (lsUser) {
-                setUser(lsUser);
-            }
+    const login = useSelector(selectUser);
             
-        },[])
-        
     return (
         
                  <Card variant="outlined">
@@ -36,7 +26,7 @@ export function CardCategory({ cardContent,categoryTitle }) {
             <CardActions >
                 {/*  */}
                     <NavLink to={`/${categoryTitle}`}>
-                        <Button variant="contained" fullWidth sx={{ m: 1 }} disabled={!user}> Переглянути</Button>
+                        <Button variant="contained" fullWidth sx={{ m: 1 }} disabled={!login}> Переглянути</Button>
                     </NavLink>
                         </CardActions>
                     </Card>

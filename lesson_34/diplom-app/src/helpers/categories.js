@@ -13,11 +13,11 @@ export const categories = {
     cardContent:
       "Смаколики, лоточки, лежанки, іграшки і багато іншого для Вашого котика...",
   },
-  other: {
+  others: {
     image: `src/assets/images/humster.jpg`,
     titleImage: "Other animals catagory",
     titleHeader: "Товари для іших тварин",
     cardContent:
-      "Смаколики, лоточки, лежанки, іграшки і багато іншого для Вашого улюбленця...",
+      "Смаколики, лоточки, лежанки, іграшки і багато іншого для  улюбленця...",
   },
 };

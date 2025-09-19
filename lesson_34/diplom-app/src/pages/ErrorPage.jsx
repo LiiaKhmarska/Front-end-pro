@@ -1,10 +1,13 @@
 
 import { Box, Typography, Button } from '@mui/material';
-import { ErrorOutline } from '@mui/icons-material'; // Пример иконки ошибки
+import { ErrorOutline } from '@mui/icons-material'; 
+import {Header} from '@components'
 
 export function ErrorPage() {
   return (
-    <Box
+    <>
+      <Header />
+      <Box
       display="flex"
       flexDirection="column"
       alignItems="center"
@@ -24,5 +27,7 @@ export function ErrorPage() {
         На головну
       </Button>
     </Box>
+      </>
+
   );
 }

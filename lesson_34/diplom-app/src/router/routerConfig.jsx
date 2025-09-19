@@ -1,9 +1,8 @@
-import { ErrorPage } from "../components/pages/ErrorPage";
-import { HomePage } from "@components/HomePage";
-// import { About } from "@components/About,";
-// import { Contacts } from "@components/Contacts";
 import { createBrowserRouter } from "react-router-dom";
-import { GoodsList } from "../components/pages/GoodsList";
+import { ErrorPage } from"../pages/ErrorPage";
+import { HomePage } from "../pages/HomePage";
+import { GoodsList } from "../pages/GoodsList";
+import{AddEditForm} from '@components'
 
 const routerConfig = [
   {
@@ -13,6 +12,7 @@ const routerConfig = [
     children: [
       { index: true, Component: HomePage },
       { path: "/:categoryTitle", Component: GoodsList },
+      { path: "/:categoryTitle/:action", Component: AddEditForm },
       { path: "/*", Component: ErrorPage },
     ],
   },
